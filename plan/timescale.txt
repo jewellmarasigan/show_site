@@ -1,0 +1,9 @@
+Timescale
+---------
+8/3/13 - 	Front: style guides/plans
+			Back: decision on tech
+
+13/3/13 - 	Initial version of Schedule & info pages
+			Backend setup
+
+15/3/13	-	Schedule & info live

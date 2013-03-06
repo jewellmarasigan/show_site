@@ -1,0 +1,12 @@
+Responsive 
+----------
+
+- 'Auto browsing'
+- location aware ( web vs show )
+- screen size adaptive
+
+
+Layout
+------
+
+- Imagery - grid (isotope/masonry)
