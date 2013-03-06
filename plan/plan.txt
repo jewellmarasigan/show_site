@@ -1,0 +1,22 @@
+Site structure
+--------------
+
+STANDARD SITE
+- Schedule
+- Course Info
+
+- Student Directory
+	- list
+		- images
+		- name
+		- email
+		- site 
+		- social networks
+
+
+LIVING SITE
+- Open Design
+	- Writing
+	- Workshops & Outcomes
+	- Talks & Videos
+	- Imagery
