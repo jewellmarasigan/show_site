@@ -74,13 +74,18 @@ input:focus {
 	width: 100%;
 }
 
-.modal input.button {
+.modal .button {
 	background: #28313f; /*#3985dd #31c09c #0d161a*/
-	color: #ffffff;
+	color: rgba(255, 255, 255, 0);
 	font-weight: bold;
 	height: 65px;
 	margin-top: 15px;
 	text-transform: uppercase;
+}
+
+.button.confirm {
+	background: #28313f url("../images/tick.png") center no-repeat;
+	background-size: 60px 60px;
 }
 
 input.wrong {
