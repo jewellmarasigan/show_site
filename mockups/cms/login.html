@@ -14,17 +14,23 @@
 
 <body>
 	<div class="container">
+		<div class="message error">
+		Opps! Looks like that email address is already taken
+		</div>
+		
 		<div class="modal login">
-			<p>
-			</p>
-			
-			<form>
+			<form action="#" method="post">
 				<input type="text" name="firstname" placeholder="First Name" value="">
 				<input type="text" name="surname" placeholder="Second Name" value="">
 				<input type="text" name="email" placeholder="Email" value="steviewonder@hotmail.com" class="wrong">
 				<input type="password" name="password" placeholder="Password" value="">
-				<input type="submit" class="button confirm">
+				<input type="submit" value="" class="button confirm">
 			</form>
+			
+			<!--
+			<p> Don't have an account? <a href="#">Sign up</a> </p>
+			<p> <a href="#">Forgot password?</a> </p>
+			-->
 		</div>
 	</div>
 	
