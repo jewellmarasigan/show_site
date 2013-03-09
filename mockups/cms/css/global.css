@@ -1,9 +1,9 @@
 /* Mockup of some of the styles for the Student CMS thing. That's my excuse for any messy HTML/CSS */
 
 *{
-	box-sizing: content-box;
-	-webkit-box-sizing: content-box;
-	-moz-box-sizing: content-box;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 }
 
 body {
@@ -31,18 +31,30 @@ a:hover {
 }
 
 .message {
-	background: #ec3636;
+	background: #2241c9;
+	box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.08);
 	color: #ffffff;
-	width: 300px;
-	padding: 15px;
+	width: 100%;
+	padding: 20px;
+	position: absolute;
 	line-height: 1.5;
+	text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+	z-index: 100;
+}
+
+.message.error {
+	background: #ef4747;
+}
+
+.message.success {
+	background: #42bc8f;
 }
 
 .modal {
-	width: 300px;
+	width: 335px;
 	height: auto;
 	margin-left: -165px;
-	margin-top: -170px;
+	margin-top: -130px;
 	position: absolute;
 	padding: 15px;
 	top: 50%;
