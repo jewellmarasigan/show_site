@@ -12,4 +12,13 @@ mysql_query("CREATE TABLE IF NOT EXISTS `administrators` (
   PRIMARY KEY (`admin_id`)
 )");
 
+mysql_query("CREATE TABLE IF NOT EXISTS `courseInfo` (
+  `version_id` int(11) NOT NULL AUTO_INCREMENT,
+  `version_user` int(11) NOT NULL,
+  `version_date` datetime NOT NULL,
+  `version_clean_content` text NOT NULL,
+  `version_content` text NOT NULL,
+  PRIMARY KEY (`version_id`)
+)");
+
 ?>

@@ -18,13 +18,7 @@ include("includes/head.php");
 ?>
 <body>
 
-Hello <?php echo $god_admin_name;?>,
-
-<ul>
-	<li><a href="../admin">Home</a></li>
-	<li><a href="courseinfo">Course info</a></li>
-	<li><a href="administrators">Administrators</a></li>
-</ul>
+<?php include("includes/design/header.php");?>
 
 <h2>Administrators</h2>
 
@@ -56,7 +50,7 @@ if(mysql_num_rows($getAdministrators)!=0)
 }
 
 ?>
-
+<br><br>
 <h2>Add administrator</h2>
 
 <label for="admin_name">Name</label><br>

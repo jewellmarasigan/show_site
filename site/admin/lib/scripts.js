@@ -55,3 +55,52 @@ function deleteAdministrator(adminid)
 		});
 	}
 }
+
+function changeCourseInfo()
+{
+	if(stuffWorking == 0)
+	{
+		$("#messageBox").html("Loading...");
+		stuffWorking = 1;
+		
+		$.getJSON("includes/ajax/courseInfo.php",{ courseInfo:$("#course_info").val() },function(data)
+		{
+			stuffWorking = 0;
+			
+			if(data.success==0)
+			{
+				$("#messageBox").html(data.error);
+			}
+			else
+			{
+				$("#revertList").prepend(data.content);
+				$("#messageBox").html("Course info changed successfully");
+			}
+		});
+	}
+}
+
+function courseInfoRevert(versionid)
+{
+	
+	if(stuffWorking == 0)
+	{
+		$("#messageBox").html("Reverting...");
+		stuffWorking = 1;
+		
+		$.getJSON("includes/ajax/courseInfoGet.php",{ id:versionid },function(data)
+		{
+			stuffWorking = 0;
+			
+			if(data.success==0)
+			{
+				$("#messageBox").html(data.error);
+			}
+			else
+			{
+				$("#course_info").val(data.content)
+				$("#messageBox").html(" ");
+			}
+		});
+	}
+}

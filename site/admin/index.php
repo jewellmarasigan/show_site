@@ -18,13 +18,7 @@ include("includes/head.php");
 ?>
 <body>
 
-Hello <?php echo $god_admin_name;?>,
-
-<ul>
-	<li><a href="../admin">Home</a></li>
-	<li><a href="courseinfo">Course info</a></li>
-	<li><a href="administrators">Administrators</a></li>
-</ul>
+<?php include("includes/design/header.php");?>
 
 </body>
 </html>

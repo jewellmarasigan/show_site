@@ -10,6 +10,37 @@
 */
 
 $loginReq = 0;
+
+/*
+	EXTRA BLOCK
+	Dont want to allow users to see this page if theyre logged in so here here here here here it goes
+*/
+
+include("includes/functions/config.php");
+
+$godid = $_COOKIE['gdnmsite_id'];
+$godkey = $_COOKIE['gdnmsite_key'];
+$success = 0;
+
+if($godid)
+{
+	$checkLogin = mysql_query("SELECT * FROM administrators WHERE admin_id = $godid");
+	
+	while($row = mysql_fetch_assoc($checkLogin))
+	{
+		$admin_loginkey = unserialize($row['admin_loginkey']);
+		$admin_permissions = $row['admin_permissions'];
+	}
+	if(in_array($godkey,$admin_loginkey))
+	{
+		header("location:../admin");
+	}
+}
+
+/*
+	EXTRA BLOCK END
+*/
+
 include("includes/head.php");
 
 /* ESSENTIAL BLOCK END */
@@ -20,6 +51,7 @@ if($_POST['login_submit'])
 	$email = mysql_real_escape_string($_POST['email']);
 	$password = md5($_POST['password']);
 	$error = '';
+	$errorCode = 0; # This variable will determine whether or not to put wrong class on which input
 	
 	$emailCheck = mysql_query("SELECT * FROM administrators WHERE admin_email = '$email'"); # Check if there is an email like the submitted one
 	
@@ -51,35 +83,45 @@ if($_POST['login_submit'])
 		else
 		{
 			$error = "Your password does not match this email";
+			$errorCode = 2;
 		}
 	}
 	else
 	{
 		$error = "Your email isn't recognised";
+		$errorCode = 1;
 	}
 }
 
 ?>
 <body>
 
-<?php
-if($error)
-{
-	?>
-    <div id="message">
-    <?php echo $error;?>
-    </div>
-    <?php
-}
-?>
 
-<form action="" method="post">
-	<label for="email_input">Email</label><br>
-    <input type="text" name="email" id="email_input"/><br>
-	<label for="password_input">Password</label><br>
-    <input type="password" name="password" id="password_input"/><br>
-    <input type="submit" value="Log in" name="login_submit"/>
-</form>
+
+<div class="container">
+    <?php
+	if($error)
+	{
+		?>
+		<div id="message error">
+		<?php echo $error;?>
+		</div>
+		<?php
+	}
+	?>
+    
+    <div class="modal login">    
+        <form action="" method="post">
+            <input type="text" name="email" placeholder="Email" <?php if($errorCode==1){ echo 'class="wrong"';}?>>
+            <input type="password" name="password" placeholder="Password" <?php if($errorCode==2){ echo 'class="wrong"';}?>>
+            <input type="submit" name="login_submit" value="Log in" class="button confirm">
+        </form>
+        <!--
+        <p> Don't have an account? <a href="#">Sign up</a> </p>
+        <p> <a href="#">Forgot password?</a> </p>
+        -->
+    </div>
+</div>
 
 </body>
 </html>
