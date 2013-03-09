@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Login</title>
+	<title>Log In</title>
 	<link rel="shortcut icon" href="favicon.ico" />
 	<link rel="stylesheet" href="css/reset.css" type="text/css" />
 	<link rel="stylesheet" href="css/global.css" type="text/css" />
@@ -13,28 +13,21 @@
 </head>
 
 <body>
-	<div class="container">
-		<div class="message error">
-		Opps! Looks like that email address is already taken
-		</div>
-		
-		<div class="modal login">
+	<div class="container">		
+		<div class="modal" id="login"> <!--Use register, login or forgot IDs to toggle between different forms-->
 			<form action="#" method="post">
-				<input type="text" name="firstname" placeholder="First Name" value="">
-				<input type="text" name="surname" placeholder="Second Name" value="">
-				<input type="text" name="email" placeholder="Email" value="steviewonder@hotmail.com" class="wrong">
-				<input type="password" name="password" placeholder="Password" value="">
+				<input type="text" name="firstname" placeholder="First Name" value="" class="firstname">
+				<input type="text" name="surname" placeholder="Surname" value="" class="surname">
+				<input type="text" name="email" placeholder="Email" value="" class="email">
+				<input type="password" name="password" placeholder="Password" value="" class="password">
 				<input type="submit" value="" class="button confirm">
+				<a href="#" class="forgot"></a>
 			</form>
-			
-			<!--
-			<p> Don't have an account? <a href="#">Sign up</a> </p>
-			<p> <a href="#">Forgot password?</a> </p>
-			-->
 		</div>
 	</div>
 	
 	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/func.js"></script>
 </body>
 
 </html>
