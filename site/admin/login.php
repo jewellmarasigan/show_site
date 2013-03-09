@@ -103,14 +103,14 @@ if($_POST['login_submit'])
 	if($error)
 	{
 		?>
-		<div id="message error">
+		<div class="message error">
 		<?php echo $error;?>
 		</div>
 		<?php
 	}
 	?>
     
-    <div class="modal login">    
+    <div class="modal" id="login">    
         <form action="" method="post">
             <input type="text" name="email" placeholder="Email" <?php if($errorCode==1){ echo 'class="wrong"';}?>>
             <input type="password" name="password" placeholder="Password" <?php if($errorCode==2){ echo 'class="wrong"';}?>>

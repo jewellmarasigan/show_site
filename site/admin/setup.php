@@ -21,4 +21,15 @@ mysql_query("CREATE TABLE IF NOT EXISTS `courseInfo` (
   PRIMARY KEY (`version_id`)
 )");
 
+$getuser = mysql_query("SELECT * FROM administrators");
+
+if(mysql_num_rows($getuser)==0)
+{
+
+	mysql_query("INSERT INTO administrators VALUES('','Test','test@test.com','fa820cc1ad39a4e99283e9fa555035ec','1','a:0:{}')");
+	
+	echo "Default user = test@test.com<br>Default password = test001";
+	
+}
+
 ?>
