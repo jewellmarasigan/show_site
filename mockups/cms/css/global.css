@@ -92,6 +92,7 @@ a:link, a:active, a:visited {
 .modal .button.confirm {
 	background: #28313f url("../images/tick-green.png") center no-repeat;
 	background-size: 60px 60px;
+	text-indent:-9999px; /* So that I can have a value but for it to be hidden */
 }
 
 /* register, login or forgot IDs can be used to change the form layout/text */

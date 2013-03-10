@@ -93,6 +93,8 @@ if($_POST['login_submit'])
 	}
 }
 
+
+
 ?>
 <body>
 
@@ -105,6 +107,15 @@ if($_POST['login_submit'])
 		?>
 		<div class="message error">
 		<?php echo $error;?>
+		</div>
+		<?php
+	}
+	
+	if($_GET['loggedout'])
+	{
+		?>
+		<div class="message success">
+		You have been successfully logged out
 		</div>
 		<?php
 	}

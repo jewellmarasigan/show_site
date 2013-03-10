@@ -36,6 +36,7 @@ mysql_query("UPDATE administrators SET admin_loginkey = '$admin_loginkey' WHERE 
 
 setcookie("gdnmsite_id","", time()-864000000, '/'); # Set cookies to no value and in the past, browsers will auto delete them
 setcookie("gdnmsite_key","", time()-864000000, '/');
+header("location:login?loggedout=1");
 
 ?>
 <body>
