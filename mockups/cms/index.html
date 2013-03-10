@@ -16,17 +16,37 @@
 	<div class="container">
 		<header class="toolbar">
 			<ul>
-				<li><a href="#../admin">CMS</a></li>
-				<li><a href="#">Course Info</a></li>
-				<li><a href="#">Administrators</a></li>
-				<li><a href="#">Students</a></li>
+				<li id="home"> <a href="#home"><span>Home</span></a> <div class="triangle"></li> <!-- Home. The whole menu items are just temporarily really ? -->
+				<li id="user" class="selected"> <a href="#users"><span>Users</span></a> <div class="triangle"></div></li> <!-- Admins and Students in a single menu ?? -->
+				<li id="settings"> <a href="#settings"><span>Settings</span></a> <div class="triangle"></li> <!-- Settings could include the course info maybe ??? -->
 			</ul>
 			
-			<ul class="right">
-				<li><a href="#">Username Here</a></li>
-				<li><a href="#">Log Out</a></li>
+			<ul class="bottom">
+				<li id="logout"> <a href="#logout"><span>Log Out</span></a> </li>
 			</ul>
 		</header>
+		
+		<div class="page">
+			<section class="fields"> <!-- Still working on the fields and stuff -->
+				<input type="text" placeholder="First Name">
+				<input type="text" placeholder="Surname">
+				<input type="text" placeholder="Year">
+				<hr>
+				<input type="text" placeholder="Bio">
+				<hr>
+				<input type="text" placeholder="Website">
+				<input type="text" placeholder="Twitter Handler">
+				<hr>
+				<input type="text" placeholder="Project Title">
+				<input type="text" placeholder="Project Description">
+				<input type="text" placeholder="Tags">
+				<hr>
+			</section>
+			
+			<section class="uploader">
+				Drop Zone
+			</section>
+		</div>
 	</div>
 	
 	<script src="js/jquery-1.9.1.min.js"></script>
