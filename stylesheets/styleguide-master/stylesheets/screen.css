@@ -1,0 +1,127 @@
+/* 
+CSS FOR POSITIONING
+position: absolute; top: ; bottom: ; left: ; right: ;
+*/
+
+body{
+	background-color: #ffffff;/*background color*/
+	font-family: Helvetica;/*standard font*/
+	color: #000000;/*standard color for text*/
+	margin: 4%;/*margin*/
+	max-width: 800px;/*max width of website*/
+	min-width: 300px;/*minunim width of website*/
+	text-align: left;/*align text*/
+	}
+h1, h2, h3, h4, h5, h6{
+	letter-spacing: 3px;/*spacing between letters*/ 
+	}		
+h1{
+	font-weight: 1100px;/*boldness of font*/
+	font-size: 45px;/*font size*/
+	}
+h2{
+	font-weight: 1000px;/*boldness of font*/
+	font-size: 35px;/*font size*/
+	}
+h3{
+	font-weight: 900px;/*boldness of font*/
+	font-size: 30px;/*font size*/
+	}
+h4{
+	font-weight: 800px;/*boldness of font*/
+	font-size: 25px;/*font size*/
+	}
+h5{
+	font-weight: 700px;/*boldness of font*/
+	font-size: 20px;/*font size*/
+	}
+h6{
+	font-weight: 600px;/*boldness of font*/
+	font-size: 15px;/*font size*/
+	}
+p{
+	font-weight: 200px;/*boldness of font*/
+	font-size: 12px;/*font size*/
+	letter-spacing: 2px;/*spacing between letters*/ 
+	}
+code{
+	font-family: "Console", Monospace;/*font*/
+	font-size: 12px;/*font size*/
+	letter-spacing: 2px;/*spacing between letters*/ 
+	}
+nav{
+	font-weight: 200px;/*boldness of font*/
+	font-size: 16px;/*font size*/
+	letter-spacing: 2px;/*spacing between letters*/ 
+	list-style-type:none;/*style type*/
+	}
+#linkslist {
+	list-style-type:none;/*style type*/
+	margin: 0;/*margin*/
+	padding: 0;/*padding*/
+	text-transform:uppercase;/*transform the text ie uppercases only*/
+	}
+a:link,a:visited{
+	color:#808080;/*color of text*/
+	text-decoration:none;/*text decoration*/
+	}
+a:hover,a:active{
+	color:#000000;/*color of text*/
+	}
+li{
+	font-size: 12px;/*font size*/
+	letter-spacing: 2px;/*spacing between letters*/ 
+	margin-bottom: 5px;/*margin (bottom)*/
+	}
+ul{
+	list-style-type: square;/*style type*/
+	margin-bottom: 5px;/*margin (bottom)*/
+	}
+ol{
+	list-style-type:decimal;/*style type*/
+	margin-bottom: 5px;/*margin (bottom)*/
+	}
+blockquote{
+	text-indent: 15px;/*indent of text*/ 
+	font-size: 12px;/*font size*/
+	letter-spacing: 2px;/*spacing between letters*/ 
+	}
+cite{
+	font-style:italic;/*font style*/ 
+	font-size: 10px;/*font size*/
+	}
+dl{
+	text-indent: 15px;/*indent of text*/
+	font-size: 12px;/*font size*/
+	letter-spacing: 2px;/*spacing between letters*/ 
+	}
+dt{
+	font-weight: bold;/*boldness of font*/
+	margin-bottom: 5px;/*margin (bottom)*/
+	}
+dd{
+	font-style:normal;/*font style*/ 
+	margin-bottom: 5px;/*margin (bottom)*/
+	}
+abbr{
+	font-weight: bold; /*boldness of font*/
+	text-transform:uppercase;/*transform the text ie uppercases only*/
+	}
+figure{
+	margin: 0;/*margin*/
+	padding: 0;/*padding*/
+	}
+figcaption{
+	margin-top: 15px;/*margin (top)*/
+	font-family: Helvetica;/*font*/
+	font-style:italic;/*font style*/ 
+	font-size: 12px;/*font size*/
+	letter-spacing: 2px;/*spacing between letters*/ 
+	max-width: 650px;/*max width*/
+	min-width: 300px;/*minunim width*/
+	}
+footer{
+	margin-top: 10px;/*margin (top)*/
+	font-style:italic;/*font style*/ 
+	font-size: 11px;/*font size*/
+	}
