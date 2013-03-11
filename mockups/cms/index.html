@@ -17,7 +17,7 @@
 		<header class="toolbar">
 			<ul>
 				<li id="home"> <a href="#home"><span>Home</span></a> <div class="triangle"></li> <!-- Home. The whole menu items are just temporarily really ? -->
-				<li id="user" class="selected"> <a href="#users"><span>Users</span></a> <div class="triangle"></div></li> <!-- Admins and Students in a single menu ?? -->
+				<li id="user" class="selected"> <a href="#users"><span>People</span></a> <div class="triangle"></div></li> <!-- Admins and Students in a single menu ?? -->
 				<li id="settings"> <a href="#settings"><span>Settings</span></a> <div class="triangle"></li> <!-- Settings could include the course info maybe ??? -->
 			</ul>
 			
@@ -27,7 +27,14 @@
 		</header>
 		
 		<div class="page">
-			<section class="fields"> <!-- Still working on the fields and stuff -->
+			<div class="options">
+				<input type="text" placeholder="First Name">
+				<input type="text" placeholder="Surname">
+				<input type="text" placeholder="Average Joe">
+				<a href="#add" class="button">Add Person</a>
+			</div>
+		<!--
+			<section class="fields">
 				<input type="text" placeholder="First Name">
 				<input type="text" placeholder="Surname">
 				<input type="text" placeholder="Year">
@@ -43,9 +50,13 @@
 				<hr>
 			</section>
 			
-			<section class="uploader">
+			
+			
+			<section class="dropzone">
 				Drop Zone
 			</section>
+			
+			-->
 		</div>
 	</div>
 	

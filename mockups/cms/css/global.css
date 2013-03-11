@@ -149,14 +149,15 @@ input.error {
 
 /* Toolbar and buttons */
 .toolbar {
-	background: #20242c; /*#28313f*/
+	background: #191919; /*#28313f #20242c blue*/
 	display: block;
 	font-size: 0.95em;
 	height: 100%;
 	position: fixed;
 	padding-top: 10px;
-	width: auto;
-	z-index: 100; 
+	width: auto; /* Animation will only work if it isnt auto. Eg 90px */
+	z-index: 100;
+ 	/*-webkit-transition: all 0.2s ease-out;*/
 }
 
 .toolbar .bottom {
@@ -195,16 +196,16 @@ input.error {
 }
  
 .toolbar li a span {
-	background: black;
+	background: #191919;
 	display: none;
 	margin-left: 100px;
-	min-width: 80px;
-	padding: 8px;
+	padding: 10px 8px 10px 8px;
 	position: absolute;
-	top: 30%; 
+	top: 22px;
+	white-space: nowrap;
 }
  
-.toolbar li:hover a span { display: block; }
+.toolbar li:hover a span { display: inline-block; }
  
 .toolbar li a {
 	bottom: 0px;
@@ -212,20 +213,31 @@ input.error {
 	display: block;
 	height: 100%;
 	position: relative;
-	text-align: center;
 	width: 100%; 
 }
  
 .page {
 	height: 100%;
-	left: 102px;
+	left: 90px;
+	width: 60%;
+	padding: 25px;
 	position: absolute;
-	width: 800px; 
 }
  
 .page input {
 	margin: auto;
 	width: 100%; 
+}
+
+.page .dropzone {
+	border: 2px dashed rgba(0, 0, 0, 0.2);
+}
+
+.page .button {
+	background: #28313f;
+	color: #ffffff;
+	display: inline-block;
+	padding: 20px;
 }
  
 .toolbar li#home { background: url("../images/home-icon.png"); }
@@ -234,13 +246,58 @@ input.error {
  
 .toolbar li#settings { background: url("../images/settings-icon.png"); }
 
-.toolbar li#logout { background: url("../images/user-icon.png"); }
+.toolbar li#logout { background: url("../images/power-icon.png"); }
  
  
 /* Portrait and Landscape */
 @media only screen and (max-width: 480px) {
+	body {
+		overflow: hidden;
+	}
+	
 	.modal { 
 
+	}
+	
+	.toolbar {		
+		width: 100%;
+	}
+	
+	.toolbar li {
+		background-position: center left !important;
+		background-position: 20px !important;
+		width: 100%;
+	}
+	
+	.toolbar .bottom  {
+		background: !important;
+		background-position: center left !important;
+		background-position: 20px !important;
+		width: 100%;
+	}
+	
+	.toolbar li a span {
+		background: transparent;
+		display: block;
+		margin-left: 75px;
+		position: absolute;
+		top: 23px;
+		text-align: left;
+	}
+	
+	.toolbar .selected .triangle {
+		display: none;
+	}
+	
+	.toolbar .selected a {
+		background: rgba(255, 255, 255, 0.2) !important;
+	}
+ 
+}
+
+@media only screen and (max-height: 365px) {
+	.toolbar .bottom  {
+		position: relative;
 	}
 }
 
