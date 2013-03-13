@@ -1,3 +1,5 @@
+/* THIS JS FILE IS A MESS I KNOW OK IM SORRY */
+
 var index = [];
 var names = [];
 var suggestions = [];
