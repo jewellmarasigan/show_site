@@ -90,7 +90,7 @@ a:link, a:active, a:visited {
 }
 
 .modal .button.confirm {
-	background: #28313f url("../images/tick-green.png") center no-repeat;
+	background: #28313f url("../images/icons/tick.png") center no-repeat;
 	background-size: 60px 60px;
 	text-indent:-9999px; /* So that I can have a value but for it to be hidden */
 }
@@ -146,6 +146,7 @@ input.error {
 }
 
 /* Toolbar and buttons */
+/* Nav would be alot cleaner and wouldnt need a bunch of classes to work if there wasnt a silly float:right glitch with the input */
 nav {
 	background: #232323;
 	display: block;
@@ -261,7 +262,6 @@ nav #power .icon { background: url("../images/icons/power.png"); }
 }
 
 .search li {
-	//border: 1px solid red;
 	height: 62px;
 }
 
