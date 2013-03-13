@@ -16,8 +16,9 @@ function resizeSearch () {
 	var searchLeft = $("#search").offset().left;
 	var rightWidth = $(".right").width();
 	
+	$(".search").css("left", searchLeft-1);
 	$("#search input").width($(window).width() - searchLeft - rightWidth);
-	$(".search").width($(window).width() - searchLeft - rightWidth);
+	$(".search").width($(window).width() - searchLeft - rightWidth + 2);
 }
 
 function showSearch () {
@@ -28,6 +29,15 @@ function showSearch () {
 function hideSearch () {
 	searchSelected = false;
 	$(".search").css("display", "none");
+}
+
+
+function showSuggested () {
+	$(".search .add span").html("Add ");	
+	for (i=0; i<suggestions.length; i++) {
+		$(".search .add span").append("<a class='name'>"+suggestions[i]+"</a>");
+	}
+	$(".search .add span").append(" as a user");
 }
 
 function isAllowSearch () {
@@ -80,17 +90,9 @@ $("#search input").blur(function() {
 
 $("#search input").keyup(function() {
 	if($("#search input").val() != "") {
-		showSearch();
 		parseString($("#search input").val());
-		
-		
-		$(".search .add span").html("Add ");
-			
-		for (i=0; i<suggestions.length; i++) {
-			$(".search .add span").append("<a class='name'>"+suggestions[i]+"</a>");
-		}
-		
-		$(".search .add span").append(" as a user");
+		showSearch();
+		showSuggested();
 	
 	}else{
 		hideSearch();	
