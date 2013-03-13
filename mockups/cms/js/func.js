@@ -33,11 +33,11 @@ function hideSearch () {
 
 
 function showSuggested () {
-	$(".search .add span").html("Add ");	
+	$(".search #add .right").html("Add ");	
 	for (i=0; i<suggestions.length; i++) {
-		$(".search .add span").append("<a class='name'>"+suggestions[i]+"</a>");
+		$(".search #add .right").append("<span class='name'>"+suggestions[i]+"</span>");
 	}
-	$(".search .add span").append(" as a user");
+	$(".search #add .right").append(" as a student");
 }
 
 function isAllowSearch () {

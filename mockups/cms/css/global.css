@@ -251,11 +251,12 @@ nav li.input span {
 	width: 400px;
 }
 
-nav #home .icon { background: url("../images/icons/home.png"); }
+nav #home .icon { background: url("../images/icons/light/home.png"); }
 nav #search .icon { background: url("../images/icons/search.png"); }
-nav #admins .icon { background: url("../images/icons/users.png"); }
-nav #course .icon { background: url("../images/icons/course.png"); }
-nav #power .icon { background: url("../images/icons/power.png"); }
+nav #students .icon { background: url("../images/icons/light/students.png"); }
+nav #admins .icon { background: url("../images/icons/light/users.png"); }
+nav #course .icon { background: url("../images/icons/light/course.png"); }
+nav #power .icon { background: url("../images/icons/light/power.png"); }
 
 /* Search */
 .search {
@@ -267,8 +268,9 @@ nav #power .icon { background: url("../images/icons/power.png"); }
 	display: block;
 	top: 58px;
 	height: auto;
-	padding: 1px;
+	max-height: 80%;
 	position: absolute;
+	overflow-y: scroll;
 	z-index: 100;
 }
 
@@ -294,14 +296,13 @@ nav #power .icon { background: url("../images/icons/power.png"); }
 	width: 100%;
 	height: auto;
 	min-height: 60px;
-	margin-bottom: 1px;
 	padding-left: 65px;
 	padding-top: 17px;
 	padding-right: 20px;
 	padding-bottom: 15px;
 }
 
-.search li .icon {
+.search li .left {
 	background-position: center center !important;
 	background-repeat: no-repeat !important;
 	background-size: 28px 28px !important;
@@ -309,12 +310,26 @@ nav #power .icon { background: url("../images/icons/power.png"); }
 
 .search .name {
 	background: #e76e66;
-	box-shadow: 0px -1px 0px #c0544e inset;
+	box-shadow: 0px -2px 0px #c0544e inset;
+	display: inline-block;
 	color: #ffffff;
+	padding: 2px 8px 2px 8px;
+	margin-top: 8px;
+	margin-right: 5px;
+	margin-left: 5px;
 	text-transform: lowercase;
 }
 
-.search #add .icon { background: url("../images/icons/add.png"); }
+.search #add {
+	border-top: 1px solid #232323;
+}
+.search #add .right {
+	padding-top: 7px;
+}
+
+.search #add .left { background: url("../images/icons/dark/add.png"); }
+.search #student .left { background: url("../images/icons/dark/students.png"); }
+.search #admin .left { background: url("../images/icons/dark/user.png"); }
 
 /* Options - Secondary Nav */
 .options {
