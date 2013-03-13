@@ -1,5 +1,15 @@
 var stuffWorking = 0; // Basically a variable to set when a user fires an ajax function, so its not fired multiple times
 
+$(document).ready(function()
+{
+    resizeSearch();
+});
+
+$(window).resize(function()
+{
+    resizeSearch();
+});
+
 // Page usage: administrators.php
 // To add a new administrator
 function addAdministrator()
@@ -103,4 +113,13 @@ function courseInfoRevert(versionid)
 			}
 		});
 	}
+}
+
+function resizeSearch()
+{
+	var searchLeft = $("#search").offset().left;
+	var rightWidth = $(".right").width();
+	
+	$("#search input").width($(window).width() - searchLeft - rightWidth);
+	$(".search").width($(window).width() - searchLeft - rightWidth);
 }

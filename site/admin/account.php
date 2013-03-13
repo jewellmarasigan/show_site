@@ -17,8 +17,12 @@ include("includes/head.php");
 
 ?>
 <body>
-
-<?php include("includes/design/header.php");?>
-
+    <div class="container">
+        <?php include("includes/design/header.php");?>
+        
+        <div class="page">
+        
+        </div>
+    </div>
 </body>
 </html>

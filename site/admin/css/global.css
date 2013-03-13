@@ -5,7 +5,7 @@
 }
 
 body {
-	background: #f2f2f2;
+	background: #e8e7e4;
 	font-family: "Open Sans", Helvetica, Arial, sans-serif;
 	margin: 0;
 	padding: 0;
@@ -82,7 +82,7 @@ a:link, a:active, a:visited {
 }
 
 .modal .button {
-	background: #28313f; /*#3985dd #31c09c #0d161a*/
+	background: #28313f;
 	font-weight: bold;
 	height: 65px;
 	margin-top: 15px;
@@ -90,7 +90,7 @@ a:link, a:active, a:visited {
 }
 
 .modal .button.confirm {
-	background: #28313f url("../images/tick-green.png") center no-repeat;
+	background: #28313f url("../images/icons/tick.png") center no-repeat;
 	background-size: 60px 60px;
 	text-indent:-9999px; /* So that I can have a value but for it to be hidden */
 }
@@ -132,7 +132,6 @@ input {
 
 input::-webkit-input-placeholder {
 	color: rgba(0, 0, 0, 0.2);
-	font-weight: bold;
 }
 
 input:focus {
@@ -147,51 +146,208 @@ input.error {
 }
 
 /* Toolbar and buttons */
-.toolbar {
-	background: #28313f;
-	clear: both;
-	font-size: 0.95em;
-	width: 100%;
-}
-
-.toolbar ul, .toolbar li {
-	display: inline-block;
-}
-
-.toolbar li {
-	float: left;
-	text-transform: uppercase;
-	text-align: left;
-}
-
-.toolbar li {
-	border-right: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.toolbar .right li {
-	//border-right: 0px solid transparent;
-	border-left: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.toolbar li a {
-	color: #ffffff;
+/* Nav would be alot cleaner and wouldnt need a bunch of classes to work if there wasnt a silly float:right glitch with the input */
+nav {
+	background: #232323;
 	display: block;
+	font-size: 1.2em;
+	position: fixed;
 	width: 100%;
-	height: 100%;
-	padding: 20px 20px 20px 20px;
+	height: 60px;
+	z-index: 100;
 }
 
-.toolbar .right {
-	top: 0px;
-	right: 0px;
+nav li {
+	background: #232323;
+	border-right: 1px solid #333333;
+	float: left;
+	width: auto;
+	height: 60px;
+	position: relative;
+}
+
+nav .right {
+	top: 0;
+	right: 0;
 	position: absolute;
 }
 
-/* Portrait and Landscape */
-@media only screen and (max-width: 480px) {
-	.modal { 
+nav .right li {
+	border-left: 1px solid #333333;
+	border-right: 0px solid transparent;
+}
 
+nav li input {
+	background: none;
+	color: #a0a0a1;
+	float: right;
+	/* //width: auto; */
+	height: 100%;
+	top: 0;
+	left: 0;
+	width: 300px;
+	padding-left: 64px;
+	/* //margin-left: -64px; */
+	position: absolute;
+}
+
+nav li:last-child { border-right: 0px solid transparent; }
+
+nav li input:focus {
+	border: 2px solid #ffffff;
+	background: #ffffff;
+	color: #232323;
+}
+
+input::-webkit-input-placeholder {
+	color: #a0a0a1;
+}
+
+nav li span {
+	color: #a0a0a1;
+	float: left;
+	font-size: 18px;
+	height: 100%;
+	line-height: 3.4em;
+	position: relative;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+nav li .icon {
+	background-position: center center !important;
+	background-repeat: no-repeat !important;
+	background-size: 28px 28px !important;
+	display: block;
+	float: left;
+	width: 65px;
+	height: 60px;
+	z-index: 100;
+	position: relative;
+}
+
+nav li a {
+	width: 100%;
+	height: 100%;
+}
+
+nav li.icon-text span {
+	padding-left: 0;
+}
+
+nav li.icon span {
+	display: none;
+}
+
+nav li.input span {
+	display: none;
+	width: 400px;
+}
+
+nav #home .icon { background: url("../images/icons/home.png"); }
+nav #search .icon { background: url("../images/icons/search.png"); }
+nav #user .icon { background: url("../images/icons/user.png"); }
+nav #settings .icon { background: url("../images/icons/settings.png"); }
+nav #power .icon { background: url("../images/icons/power.png"); }
+
+/* Search */
+.search {
+	background: white;
+	box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.01);
+	top: 60px;
+	left: 221px;
+	width: 800px;
+	height: auto;
+	position: absolute;
+}
+
+.search li {
+	height: 62px;
+}
+
+.search li .icon {
+	background-position: center center !important;
+	background-repeat: no-repeat !important;
+	background-size: 28px 28px !important;
+	display: block;
+	float: left;
+	width: 60px;
+	height: 60px;
+	position: relative;
+}
+
+.search li span {
+	float: left;
+	font-size: 20px;
+	height: 100%;
+	line-height: 3.1em;
+	position: relative;
+	padding-left: 5px;
+	padding-right: 25px;
+}
+
+.search .name {
+	background: #e76e66;
+	border: 1px solid #e76e66;
+	box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5) inset;
+	color: #ffffff;
+	padding: 5px 10px 5px 10px;
+	margin: 0px 5px 0px 5px;
+}
+
+.search .add .icon {
+	background: url("../images/icons/add.png");
+}
+
+/* Page */
+.page {
+	color: black;
+	margin: auto;
+	margin-top: 60px;
+	width: 100%;
+	position: absolute;
+}
+ 
+/* Portrait and Landscape */
+@media only screen and (max-width: 712px) {
+	body {
+		overflow: hidden;
 	}
+	
+	nav {
+		box-shadow: 0px 5px 0px rgba(0, 0, 0, 0.1);
+		width: 100%;
+		height: auto;
+		position: relative;
+	}
+	
+	nav li {
+		border: none;
+		width: 100%;
+		float: none;
+	}
+	
+	nav .right {
+		float: none;
+		top: auto;
+		right: auto;
+		position: static;
+	}
+	
+	nav li.icon span, nav li.input span {
+		display: inline-block;
+		padding-left: 0;
+	}
+	
+	nav li.input input {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	body {
+		overflow: hidden;
+	} 
 }
 
 /* Keyframe Animations */

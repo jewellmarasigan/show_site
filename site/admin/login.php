@@ -122,9 +122,9 @@ if($_POST['login_submit'])
 	?>
     
     <div class="modal" id="login">    
-        <form action="" method="post">
-            <input type="text" name="email" placeholder="Email" <?php if($errorCode==1){ echo 'class="wrong"';}?>>
-            <input type="password" name="password" placeholder="Password" <?php if($errorCode==2){ echo 'class="wrong"';}?>>
+        <form action="?login=1" method="post">
+            <input type="text" name="email" placeholder="Email" <?php if($errorCode==1){ echo 'class="error"';}?>>
+            <input type="password" name="password" placeholder="Password" <?php if($errorCode==2){ echo 'class="error"';}?>>
             <input type="submit" name="login_submit" value="Log in" class="button confirm">
         </form>
         <!--
