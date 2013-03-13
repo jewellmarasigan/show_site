@@ -5,7 +5,7 @@
 }
 
 body {
-	background: #f2f2f2;
+	background: #e8e7e4;
 	font-family: "Open Sans", Helvetica, Arial, sans-serif;
 	margin: 0;
 	padding: 0;
@@ -82,7 +82,7 @@ a:link, a:active, a:visited {
 }
 
 .modal .button {
-	background: #28313f; /*#3985dd #31c09c #0d161a*/
+	background: #28313f;
 	font-weight: bold;
 	height: 65px;
 	margin-top: 15px;
@@ -132,7 +132,6 @@ input {
 
 input::-webkit-input-placeholder {
 	color: rgba(0, 0, 0, 0.2);
-	font-weight: bold;
 }
 
 input:focus {
@@ -146,159 +145,201 @@ input.error {
 	-ms-animation: SHAKE 1.1s;
 }
 
-
 /* Toolbar and buttons */
-.toolbar {
-	background: #191919; /*#28313f #20242c blue*/
+nav {
+	background: #232323;
 	display: block;
-	font-size: 0.95em;
-	height: 100%;
+	font-size: 1.2em;
 	position: fixed;
-	padding-top: 10px;
-	width: auto; /* Animation will only work if it isnt auto. Eg 90px */
+	width: 100%;
+	height: 60px;
 	z-index: 100;
- 	/*-webkit-transition: all 0.2s ease-out;*/
 }
 
-.toolbar .bottom {
-	bottom: 0px;
-	position: absolute; 
+nav li {
+	background: #232323;
+	border-right: 1px solid #333333;
+	float: left;
+	width: auto;
+	height: 60px;
+	position: relative;
 }
 
-.toolbar .triangle {
-	display: none;
-	width: 0; 
-	height: 0; 
-	border-top: 10px solid transparent;
-	border-bottom: 10px solid transparent; 
-	border-right: 10px solid #f2f2f2;
+nav .right {
+	top: 0;
+	right: 0;
 	position: absolute;
-	margin-top: -50px;
-	right: 0px;
 }
 
-.toolbar .selected .triangle { display: block; }
- 
-.toolbar ul, .toolbar li { display: block; }
- 
-.toolbar li {
-	background-position: center !important;
+nav .right li {
+	border-left: 1px solid #333333;
+	border-right: 0px solid transparent;
+}
+
+nav li input {
+	background: none;
+	color: #a0a0a1;
+	float: right;
+	/* //width: auto; */
+	height: 100%;
+	top: 0;
+	left: 0;
+	width: 300px;
+	padding-left: 64px;
+	/* //margin-left: -64px; */
+	position: absolute;
+}
+
+nav li:last-child { border-right: 0px solid transparent; }
+
+nav li input:focus {
+	border: 2px solid #ffffff;
+	background: #ffffff;
+	color: #232323;
+}
+
+input::-webkit-input-placeholder {
+	color: #a0a0a1;
+}
+
+nav li span {
+	color: #a0a0a1;
+	float: left;
+	font-size: 18px;
+	height: 100%;
+	line-height: 3.4em;
+	position: relative;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+nav li .icon {
+	background-position: center center !important;
 	background-repeat: no-repeat !important;
-	background-size: 50px 50px !important;
-	margin-bottom: 10px;
-	position: relative;
-	text-transform: capitalize;
-	height: 80px;
-	width: 90px;
-}
-
-.toolbar li.selected{
-}
- 
-.toolbar li a span {
-	background: #191919;
-	display: none;
-	margin-left: 100px;
-	padding: 10px 8px 10px 8px;
-	position: absolute;
-	top: 22px;
-	white-space: nowrap;
-}
- 
-.toolbar li:hover a span { display: inline-block; }
- 
-.toolbar li a {
-	bottom: 0px;
-	color: rgba(255, 255, 255, 1); /*#8dedc9*/
+	background-size: 28px 28px !important;
 	display: block;
-	height: 100%;
+	float: left;
+	width: 65px;
+	height: 60px;
+	z-index: 100;
 	position: relative;
-	width: 100%; 
 }
- 
-.page {
+
+nav li a {
+	width: 100%;
 	height: 100%;
-	left: 90px;
-	width: 60%;
-	padding: 25px;
+}
+
+nav li.icon-text span {
+	padding-left: 0;
+}
+
+nav li.icon span {
+	display: none;
+}
+
+nav li.input span {
+	display: none;
+	width: 400px;
+}
+
+nav #home .icon { background: url("../images/icons/home.png"); }
+nav #search .icon { background: url("../images/icons/search.png"); }
+nav #user .icon { background: url("../images/icons/user.png"); }
+nav #settings .icon { background: url("../images/icons/settings.png"); }
+nav #power .icon { background: url("../images/icons/power.png"); }
+
+/* Search */
+.search {
+	background: white;
+	box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.01);
+	top: 60px;
+	left: 221px;
+	width: 800px;
+	height: auto;
 	position: absolute;
 }
- 
-.page input {
-	margin: auto;
-	width: 100%; 
+
+.search li {
+	//border: 1px solid red;
+	height: 62px;
 }
 
-.page .dropzone {
-	border: 2px dashed rgba(0, 0, 0, 0.2);
+.search li .icon {
+	background-position: center center !important;
+	background-repeat: no-repeat !important;
+	background-size: 28px 28px !important;
+	display: block;
+	float: left;
+	width: 60px;
+	height: 60px;
+	position: relative;
 }
 
-.page .button {
-	background: #28313f;
+.search li span {
+	float: left;
+	font-size: 20px;
+	height: 100%;
+	line-height: 3.1em;
+	position: relative;
+	padding-left: 5px;
+	padding-right: 25px;
+}
+
+.search .name {
+	background: #e76e66;
+	border: 1px solid #e76e66;
+	border-radius: 2px;
+	box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5) inset;
 	color: #ffffff;
-	display: inline-block;
-	padding: 20px;
+	padding: 5px 10px 5px 10px;
+	margin: 0px 5px 0px 5px;
 }
- 
-.toolbar li#home { background: url("../images/home-icon.png"); }
- 
-.toolbar li#user { background: url("../images/user-icon.png"); }
- 
-.toolbar li#settings { background: url("../images/settings-icon.png"); }
 
-.toolbar li#logout { background: url("../images/power-icon.png"); }
- 
+.search .add .icon {
+	background: url("../images/icons/add.png");
+}
  
 /* Portrait and Landscape */
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 712px) {
 	body {
 		overflow: hidden;
 	}
 	
-	.modal { 
-
-	}
-	
-	.toolbar {		
+	nav {
+		box-shadow: 0px 5px 0px rgba(0, 0, 0, 0.1);
 		width: 100%;
-	}
-	
-	.toolbar li {
-		background-position: center left !important;
-		background-position: 20px !important;
-		width: 100%;
-	}
-	
-	.toolbar .bottom  {
-		background: !important;
-		background-position: center left !important;
-		background-position: 20px !important;
-		width: 100%;
-	}
-	
-	.toolbar li a span {
-		background: transparent;
-		display: block;
-		margin-left: 75px;
-		position: absolute;
-		top: 23px;
-		text-align: left;
-	}
-	
-	.toolbar .selected .triangle {
-		display: none;
-	}
-	
-	.toolbar .selected a {
-		background: rgba(255, 255, 255, 0.2) !important;
-	}
- 
-}
-
-@media only screen and (max-height: 365px) {
-	.toolbar .bottom  {
+		height: auto;
 		position: relative;
 	}
+	
+	nav li {
+		border: none;
+		width: 100%;
+		float: none;
+	}
+	
+	nav .right {
+		float: none;
+		top: auto;
+		right: auto;
+		position: static;
+	}
+	
+	nav li.icon span, nav li.input span {
+		display: inline-block;
+		padding-left: 0;
+	}
+	
+	nav li.input input {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	body {
+		overflow: hidden;
+	} 
 }
 
 /* Keyframe Animations */
