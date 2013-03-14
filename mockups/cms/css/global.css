@@ -5,7 +5,7 @@
 }
 
 body {
-	background: #eeedea; /* #f3f3f3 #e8e7e4*/
+	background: #e8e7e4; /* #f3f3f3 #e8e7e4 eeedea*/
 	font-family: "Open Sans", Helvetica, Arial, sans-serif;
 	margin: 0;
 	padding: 0;
@@ -172,6 +172,10 @@ nav li {
 	position: relative;
 }
 
+nav .selected {
+
+}
+
 nav .right {
 	top: 0;
 	right: 0;
@@ -195,6 +199,7 @@ nav li input {
 	padding-left: 64px;
 	/* //margin-left: -64px; */
 	position: absolute;
+	z-index: 200px;
 }
 
 nav li:last-child { border-right: 0px solid transparent; }
@@ -258,10 +263,17 @@ nav #admins .icon { background: url("../images/icons/light/users.png"); }
 nav #course .icon { background: url("../images/icons/light/course.png"); }
 nav #power .icon { background: url("../images/icons/light/power.png"); }
 
+nav #home .icon { background: url("../images/icons/light/home.png"); }
+nav #search .icon { background: url("../images/icons/search.png"); }
+nav #students .icon { background: url("../images/icons/light/students.png"); }
+nav .selected #admins .icon { background: url("../images/icons/dark/users.png"); }
+nav #course .icon { background: url("../images/icons/light/course.png"); }
+nav #power .icon { background: url("../images/icons/light/power.png"); }
+
 /* Search */
 .search {
 	background: #ffffff;
-	box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.01);
+	box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.04);
 	border-left: 1px solid #232323;
 	border-right: 1px solid #232323;
 	border-bottom: 1px solid #232323;
@@ -269,7 +281,7 @@ nav #power .icon { background: url("../images/icons/light/power.png"); }
 	top: 58px;
 	height: auto;
 	max-height: 80%;
-	position: absolute;
+	position: fixed;
 	overflow-y: scroll;
 	z-index: 100;
 }
@@ -300,6 +312,7 @@ nav #power .icon { background: url("../images/icons/light/power.png"); }
 	padding-top: 17px;
 	padding-right: 20px;
 	padding-bottom: 15px;
+	-webkit-transition: all 11s ease-in-out;
 }
 
 .search li .left {
@@ -336,36 +349,108 @@ nav #power .icon { background: url("../images/icons/light/power.png"); }
 	background: #f7f7f7;
 	display: block;
 	width: 100%;
-	height: 45px;
+	//height: 45px;
 	position: absolute;
 	margin-top: 60px;
 }
 
+li, h2, h3, h4, h5, .edit, .level, img {
+	//border: 1px solid red;
+}
+
 /* Page */
 .page {
-	color: black;
-	margin-top: 105px;
-	padding: 25px;
+	color: #232323;
+	margin-top: 60px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 	position: absolute;
 }
+
+.page input {
+}
+
+.page .button {
+	background: #232323;
+	color: #ece8e8;
+	display: inline-block;
+	padding: 15px 25px 15px 25px; /*padding: 23px 40px 23px 40px;*/
+	text-transform: uppercase;
+}
+
+.page ul {
+	//border: 1px solid rgba(0, 0, 0, 0.1);
+	margin-top: 20px;
+	overflow: hidden;
+}
+
+.page li {
+	background: #f7f7f7;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+	width: 100%;
+	padding: 20px 30px 20px 30px;
+	overflow: hidden;
+}
+.page li h4 {
+	font-size: 18px;
+	font-weight: bold;
+	margin-left: 80px;
+	margin-top: 7px;
+}
+
+.page li h5 {
+	color: rgba(0, 0, 0, 0.3);
+	display: inline-block;
+	font-size: 18px;
+	margin-left: 20px;
+	margin-top: 10px;
+}
+
+.page li img {
+	//border: 1px solid rgba(0, 0, 0, 0.05);
+	display: block;
+	float: left;
+	width: 60px;
+	height: 60px;
+}
+
+.page li .level {
+	display: none;
+	float: right;
+}
+
+.page li .edit {
+	opacity: 0;
+	right: 30px;
+	margin-top: -18px;
+	position: absolute;
+}
+
+.page li:hover .edit {
+	opacity: 1;
+}
+
+
+/* Admins */
+
  
 /* Portrait and Landscape */
 @media only screen and (max-width: 712px) {
-	body {
-		overflow: hidden;
-	}
-	
 	nav {
-		box-shadow: 0px 5px 0px rgba(0, 0, 0, 0.1);
+		box-shadow: 0px 5px 0px rgba(0, 0, 0, 0.05);
 		width: 100%;
 		height: auto;
-		position: relative;
+		position: absolute;
 	}
 	
 	nav li {
 		border: none;
 		width: 100%;
 		float: none;
+	}
+	
+	nav li span {
+		width: 60% !important;
 	}
 	
 	nav .right {
@@ -383,13 +468,13 @@ nav #power .icon { background: url("../images/icons/light/power.png"); }
 	nav li.input input {
 		display: none;
 	}
+	
+	.search {
+		display: none !important;
+	}
 }
 
 @media only screen and (max-width: 1000px) {
-	body {
-		overflow: hidden;
-	}
-	
 	.center {
 		width: 100%;
 		margin-left: 0;

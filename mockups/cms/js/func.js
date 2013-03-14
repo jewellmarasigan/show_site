@@ -1,6 +1,7 @@
 /* THIS JS FILE IS A MESS I KNOW OK IM SORRY */
 
-var index = [];
+var students = ["Anthony Cossins", "Adam Sandler", "Stevie Wonder", "Peter Beardsly", "John Jonny"];
+var admins = ["Anthony Cossins", "Adam Sandler", "Stevie Wonder", "Peter Beardsly", "John Jonny"];
 var names = [];
 var suggestions = [];
 var selectedSuggestion = 0;
