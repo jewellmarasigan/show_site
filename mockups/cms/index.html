@@ -78,27 +78,56 @@
 			</ul>
 		</div>
 		
-		<!--<div class="options"></div>-->
 		<div class="page center">
-		
-			<input type="text" name="search" placeholder="Name">
-			<input type="text" name="search" placeholder="Email">
-			<input type="password" name="search" placeholder="Password">
-			<a href="#" class="button">Add</a>
+			<section class="left-small">
+				<input type="text" name="search" placeholder="Name">
+				<input type="text" name="search" placeholder="Email">
+				<input type="password" name="search" placeholder="Password">
+				<select id="admin_permissions">
+	                <option value="1">1 (Top level administrator)</option>
+	                <option value="2">2 (Average backend user)</option>	
+	                <option value="3">3 (Average joe)</option>
+	            </select>
+				<input type="submit" value="Add Admin" class="button confirm">
+			</section>
 			
-			<ul>
-				<li id="administrator1">
-					<img src="images/icons/dark/user.png">
-                    <h4>Name</h4>
-                    <h5>email@email.com</h5>
-                    <span class="level level-1">1</span>
-                    <span class="edit">
-	                    <a href="#edit" class="button">Edit</a>
-	                    <a href="#delete" class="button">Delete</a>
-                    </span>
-                </li>
-			</ul>
-			
+			<section class="right-big">
+				<ul>
+					<li id="administrator1">
+						<img src="images/icons/dark/user.png">
+	                    <h4>Name</h4>
+	                    <h5>email@email.com</h5>
+	                    <span class="level level-1"></span> <!--Echo (or is it print?) the permission level number after the class level- -->
+	                    <span class="edit">
+		                    <a href="#edit" class="button">Edit</a>
+		                    <a href="#delete" class="button">Delete</a>
+	                    </span>
+	                </li>
+	                
+	                <li id="administrator1">
+						<img src="images/icons/dark/user.png">
+	                    <h4>Name</h4>
+	                    <h5>email@email.com</h5>
+	                    <span class="level level-2"></span>
+	                    <span class="edit">
+		                    <a href="#edit" class="button">Edit</a>
+		                    <a href="#delete" class="button">Delete</a>
+	                    </span>
+	                </li>
+	                
+	                <li id="administrator1">
+						<img src="images/icons/dark/user.png">
+	                    <h4>Name</h4>
+	                    <h5>email@email.com</h5>
+	                    <span class="level level-3"></span>
+	                    <span class="edit">
+		                    <a href="#edit" class="button">Edit</a>
+		                    <a href="#delete" class="button">Delete</a>
+	                    </span>
+	                </li>
+	                
+	            </ul>
+			</section>
 		</div>
 	</div>
 	
