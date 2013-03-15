@@ -165,7 +165,7 @@ nav {
 
 nav li {
 	background: #3f3f3f;
-	//border-right: 1px solid #333333;
+/* 	//border-right: 1px solid #333333; */
 	float: left;
 	width: auto;
 	height: 60px;
@@ -183,8 +183,10 @@ nav .right {
 }
 
 nav .right li {
+/*
 	//border-left: 1px solid #333333;
 	//border-right: 0px solid transparent;
+*/
 }
 
 nav li input {
@@ -280,13 +282,6 @@ nav #admins .icon { background: url("../images/icons/light/users.png"); }
 nav #course .icon { background: url("../images/icons/light/course.png"); }
 nav #power .icon { background: url("../images/icons/light/power.png"); }
 
-nav #home .icon { background: url("../images/icons/light/home.png"); }
-nav #search .icon { background: url("../images/icons/search.png"); }
-nav #students .icon { background: url("../images/icons/light/students.png"); }
-nav .selected #admins .icon { background: url("../images/icons/dark/users.png"); }
-nav #course .icon { background: url("../images/icons/light/course.png"); }
-nav #power .icon { background: url("../images/icons/light/power.png"); }
-
 /* Search */
 .search {
 	background: #ffffff;
@@ -305,7 +300,7 @@ nav #power .icon { background: url("../images/icons/light/power.png"); }
 
 .search li {
 	font-size: 18px;
-	line-height: 1.4;
+	line-height: 1.5;
 	width: 100%;
 	height: auto;
 	min-height: 60px;
@@ -354,26 +349,13 @@ nav #power .icon { background: url("../images/icons/light/power.png"); }
 	text-transform: lowercase;
 }
 
-.search #add {
-	//border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
 .search #add .right {
 	padding-top: 7px;
 }
 
 .search #add .left { background: url("../images/icons/dark/add.png"); }
 .search #student .left { background: url("../images/icons/dark/students.png"); }
-.search #admin .left { background: url("../images/icons/dark/user.png"); }
-
-/* Options - Secondary Nav */
-.options {
-	background: #f7f7f7;
-	display: block;
-	width: 100%;
-	//height: 45px;
-	position: absolute;
-	margin-top: 60px;
-}
+.search #admin .left { background: url("../images/icons/dark/user.png"); }	
 
 li, h2, h3, h4, h5, .edit, .level, img {
 	//border: 1px solid red;
@@ -453,20 +435,19 @@ li, h2, h3, h4, h5, .edit, .level, img {
 }
 
 .page li .level {
-	background: #b8b8b8;
-	box-shadow: 0px -2px 0px rgba(0, 0, 0, 0.2) inset;
-	color: white;
+	border: 1px solid #b8b8b8; 
+	color: #b8b8b8;
 	display: block;
+	right: 18px;
 	padding: 5px 8px 5px 8px;
 	position: absolute;
 	margin-top: -35px;
-	right: 18px;
 	text-align: center;
 }
 
-.page li .level-1 { background: #e76e66; }
-.page li .level-2 { background: #9cc869; }
-.page li .level-3 { background: #b8b8b8; }
+.page li .level-1 { border: 1px solid #e76e66; color: #e76e66; }
+.page li .level-2 { border: 1px solid #9cc869; color: #9cc869; }
+.page li .level-3 { border: 1px solid #b8b8b8; color: #b8b8b8; }
 
 .page li .level-1:before { content: "Admin"; }
 .page li .level-2:before { content: "Moderator"; }
@@ -486,16 +467,11 @@ section.right-big {
 	float: right;
 }
 
-
-
-/* Admins */
-
- 
 /* Portrait and Landscape */
 @media only screen and (max-width: 712px) {
 	nav {
-		//display: none;
 		box-shadow: 0px 5px 1px rgba(0, 0, 0, 0.04);
+		display: none;
 		width: 100%;
 		height: auto;
 		position: absolute;
@@ -509,6 +485,8 @@ section.right-big {
 	
 	nav li span {
 		width: 60% !important;
+		top: auto !important;
+		position: relative !important;
 	}
 	
 	nav .right {

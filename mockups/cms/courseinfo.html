@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Home</title>
+	<link rel="shortcut icon" href="favicon.ico" />
+	<link rel="stylesheet" href="css/reset.css" type="text/css" />
+	<link rel="stylesheet" href="css/global.css" type="text/css" />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+	
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+</head>
+
+<body>
+	<div class="container">
+		<nav>
+			<ul> <!-- classes: icon-text, text, icon, input -->
+				<li class="text" id="home">
+					<a href="#1"> 
+						<span>CMS</span> 
+					</a>
+				</li>
+				
+				<li class="icon" id="course">
+					<a href="#3">
+						<div class="icon"></div>
+						<span>Course Info</span>
+					</a>
+				</li>
+				
+				<li class="icon" id="students">
+					<a href="#2"> 
+						<div class="icon"></div>
+						<span>Students</span>
+					</a>
+				</li>
+				
+				<li class="icon selected" id="admins">
+					<a href="#2"> 
+						<div class="icon"></div>
+						<span>Administrators</span>
+					</a>
+				</li>
+				
+				<li class="input" id="search">
+					<a href="#4">
+						<div class="icon"></div>
+						<span>Search</span>
+					</a>
+					<input type="text" name="search" placeholder="Search">
+				</li>
+	
+			</ul>
+			
+			<ul class="right">
+				<li class="text">
+					<a href="#5">
+						<span>Username</span>
+					</a>
+				</li>
+				
+				<li id="power" class="icon">
+					<a href="#6">
+						<div class="icon"></div>
+						<span>Log Off</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		
+		<div class="search">
+			<ul>
+				<li><div class="left"></div><div class="right">No Results found, however you could...</div></li>
+				<li id="admin"><div class="left"></div><div class="right">Mr Admin</div></li>
+				<li id="student"><div class="left"></div><div class="right">Mr Student</div></li>
+				<li id="add"><div class="left"></div><div class="right">Add "Adam"</div></li>
+			</ul>
+		</div>
+		
+		<div class="page center">
+			<section class="left-small">
+				<h2>Past versions</h2>
+				<div class="clock-icon">
+				</div>
+				<ul id="revertList">
+					<li><a href="javascript:courseInfoRevert(1);">14:20:20 9th March, 2013 - Jonny Thaw</a></li>
+				</ul>     
+			</section>
+			
+			<section class="right-big">  
+				<h2>Course info</h2>
+				<!-- - - - - - 
+				Hellz yeah I've got markdown on the go, you better believe it.
+				
+				At first I was afraid I was petrified
+				Kept thinkin' I could never live with markdown by my side
+				- - - - - - -->
+				<textarea cols="40" rows="25" id="course_info">
+A First Level Header
+====================
+
+A Second Level Header
+---------------------
+
+Now is the time for all good men to come to
+the aid of their country. This is just a
+regular paragraph.
+
+The quick brown fox jumped over the lazy
+dog's back.
+
+### Header 3
+
+&gt; This is a blockquote.
+&gt; 
+&gt; This is the second paragraph in the blockquote.
+&gt;
+&gt; ## This is an H2 in a blockquote
+				</textarea>
+				
+				<input type="button" class="button" onclick="changeCourseInfo();" value="Save Changes">
+			</section>
+			
+			<div id="messageBox"></div>
+		</div>
+	</div>
+	
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/func.js"></script>
+</body>
+
+</html>
