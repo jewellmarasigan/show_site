@@ -5,7 +5,7 @@
 }
 
 body {
-	background: #e8e7e4;
+	background: #eeedea; /* #f3f3f3 #e8e7e4*/
 	font-family: "Open Sans", Helvetica, Arial, sans-serif;
 	margin: 0;
 	padding: 0;
@@ -15,6 +15,12 @@ body {
 a:link, a:active, a:visited {
 	color: #517aba;
 	text-decoration: none;
+}
+
+.center {
+	left: 50%;
+	width: 1000px;
+	margin-left: -500px;
 }
 
 .modal a:hover {
@@ -154,7 +160,7 @@ nav {
 	position: fixed;
 	width: 100%;
 	height: 60px;
-	z-index: 100;
+	z-index: 50;
 }
 
 nav li {
@@ -194,7 +200,8 @@ nav li input {
 nav li:last-child { border-right: 0px solid transparent; }
 
 nav li input:focus {
-	border: 2px solid #ffffff;
+	border: none;
+	border-bottom: 1px solid #333333;
 	background: #ffffff;
 	color: #232323;
 }
@@ -244,67 +251,101 @@ nav li.input span {
 	width: 400px;
 }
 
-nav #home .icon { background: url("../images/icons/home.png"); }
+nav #home .icon { background: url("../images/icons/light/home.png"); }
 nav #search .icon { background: url("../images/icons/search.png"); }
-nav #user .icon { background: url("../images/icons/user.png"); }
-nav #settings .icon { background: url("../images/icons/settings.png"); }
-nav #power .icon { background: url("../images/icons/power.png"); }
+nav #students .icon { background: url("../images/icons/light/students.png"); }
+nav #admins .icon { background: url("../images/icons/light/users.png"); }
+nav #course .icon { background: url("../images/icons/light/course.png"); }
+nav #power .icon { background: url("../images/icons/light/power.png"); }
 
 /* Search */
 .search {
-	background: white;
+	background: #ffffff;
 	box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.01);
-	top: 60px;
-	left: 221px;
-	width: 800px;
+	border-left: 1px solid #232323;
+	border-right: 1px solid #232323;
+	border-bottom: 1px solid #232323;
+	display: block;
+	top: 58px;
 	height: auto;
+	max-height: 80%;
 	position: absolute;
+	overflow-y: scroll;
+	z-index: 100;
 }
 
 .search li {
-	height: 62px;
+	font-size: 18px;
+	line-height: 1.4;
+	width: 100%;
+	height: auto;
+	min-height: 60px;
+	overflow: hidden;
 }
 
-.search li .icon {
+.search li .left {
+	background: url("../images/icons/user.png");
+	width: 60px;
+	height: auto;
+	min-height: 60px;
+	position: absolute;
+}
+
+.search li .right {
+	float: left;
+	width: 100%;
+	height: auto;
+	min-height: 60px;
+	padding-left: 65px;
+	padding-top: 17px;
+	padding-right: 20px;
+	padding-bottom: 15px;
+}
+
+.search li .left {
 	background-position: center center !important;
 	background-repeat: no-repeat !important;
 	background-size: 28px 28px !important;
-	display: block;
-	float: left;
-	width: 60px;
-	height: 60px;
-	position: relative;
-}
-
-.search li span {
-	float: left;
-	font-size: 20px;
-	height: 100%;
-	line-height: 3.1em;
-	position: relative;
-	padding-left: 5px;
-	padding-right: 25px;
 }
 
 .search .name {
 	background: #e76e66;
-	border: 1px solid #e76e66;
-	box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5) inset;
+	box-shadow: 0px -2px 0px #c0544e inset;
+	display: inline-block;
 	color: #ffffff;
-	padding: 5px 10px 5px 10px;
-	margin: 0px 5px 0px 5px;
+	padding: 2px 8px 2px 8px;
+	margin-top: 8px;
+	margin-right: 5px;
+	margin-left: 5px;
+	text-transform: lowercase;
 }
 
-.search .add .icon {
-	background: url("../images/icons/add.png");
+.search #add {
+	border-top: 1px solid #232323;
+}
+.search #add .right {
+	padding-top: 7px;
+}
+
+.search #add .left { background: url("../images/icons/dark/add.png"); }
+.search #student .left { background: url("../images/icons/dark/students.png"); }
+.search #admin .left { background: url("../images/icons/dark/user.png"); }
+
+/* Options - Secondary Nav */
+.options {
+	background: #f7f7f7;
+	display: block;
+	width: 100%;
+	height: 45px;
+	position: absolute;
+	margin-top: 60px;
 }
 
 /* Page */
 .page {
 	color: black;
-	margin: auto;
-	margin-top: 60px;
-	width: 100%;
+	margin-top: 105px;
+	padding: 25px;
 	position: absolute;
 }
  
@@ -341,6 +382,18 @@ nav #power .icon { background: url("../images/icons/power.png"); }
 	
 	nav li.input input {
 		display: none;
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+	body {
+		overflow: hidden;
+	}
+	
+	.center {
+		width: 100%;
+		margin-left: 0;
+		left: 0;
 	}
 }
 

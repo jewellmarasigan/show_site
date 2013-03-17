@@ -6,17 +6,24 @@
             </a>
         </li>
         
-        <li class="icon" id="user">
-            <a href="administrators"> 
+        <li class="icon" id="course">
+            <a href="courseinfo">
                 <div class="icon"></div>
-                <span>People</span>
+                <span>Course Info</span>
             </a>
         </li>
         
-        <li class="icon" id="settings">
-            <a href="#3">
+        <li class="icon" id="students">
+            <a href="students"> 
                 <div class="icon"></div>
-                <span>Settings</span>
+                <span>Students</span>
+            </a>
+        </li>
+        
+        <li class="icon" id="admins">
+            <a href="administrators"> 
+                <div class="icon"></div>
+                <span>Administrators</span>
             </a>
         </li>
         
