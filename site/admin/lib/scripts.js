@@ -1,4 +1,5 @@
 var stuffWorking = 0; // Basically a variable to set when a user fires an ajax function, so its not fired multiple times
+var editAdminId; // A variable that acts similar to a session variable for editing administrators, in opposition to using a hidden input
 
 $(document).ready(function()
 {
@@ -39,6 +40,9 @@ function addAdministrator()
 	}	
 }
 
+
+// Page usage: administrators.php
+// To delete an administrator
 function deleteAdministrator(adminid)
 {
 	if(stuffWorking == 0)
@@ -66,6 +70,102 @@ function deleteAdministrator(adminid)
 	}
 }
 
+
+// Page usage: administrators.php
+// To show the edit box of an administrator
+function editAdministrator(adminid)
+{
+	if(stuffWorking == 0)
+	{
+		$("#messageBox").html("Loading...");
+		stuffWorking = 1;
+		
+		if($("#add_administrator").is(":visible"))
+		{
+			$("#add_administrator").animate({"position":"absolute","margin-top":"-310px"},500,'easeOutQuart',function()
+			{
+				$("#edit_administrator").slideUp(250);
+				$.getJSON("includes/ajax/getAdministrator.php",{ id:adminid },function(data)
+				{
+					stuffWorking = 0;
+					
+					if(data.success==0)
+					{
+						$("#messageBox").html(data.error);
+					}
+					else
+					{
+						$("#add_administrator").hide();
+						$("#edit_administrator").html(data.content).show().animate({"position":"absolute","margin-top":"0px"},250);
+					}
+				});
+			});
+		}
+		else
+		{
+			$("#edit_administrator").animate({"position":"absolute","margin-top":"-310px"},500,'easeOutQuart',function()
+			{
+				$.getJSON("includes/ajax/getAdministrator.php",{ id:adminid },function(data)
+				{
+					stuffWorking = 0;
+					
+					if(data.success==0)
+					{
+						$("#messageBox").html(data.error);
+					}
+					else
+					{
+						$("#edit_administrator").html(data.content).animate({"position":"absolute","margin-top":"0px"},250);
+					}
+				});
+			});
+		}
+		editAdminId = adminid;
+	}
+}
+
+// Page usage: administrators.php
+// To post the changes to an administrator
+function editAdministratorPost()
+{
+	if(stuffWorking == 0)
+	{
+		$("#edit_administrator").fadeTo(250,0.5);
+		
+		var admin_name = $("#edit_admin_name").val(),
+			admin_email = $("#edit_admin_email").val(),
+			admin_password = $("#edit_admin_password").val(),
+			admin_permissions = $("#edit_admin_permissions").val();
+			
+		
+		$.getJSON("includes/ajax/editAdministrator.php",{ id:editAdminId, name:admin_name , email:admin_email , password:admin_password , permissions:admin_permissions },function(data)
+		{
+			stuffWorking = 0;
+			console.log(data);
+			
+			if(data.success==0)
+			{
+				$("#messageBox").html(data.error);
+			}
+			else
+			{
+				$("#administrator"+editAdminId).replaceWith(data.content);
+				editAdminId = 0;
+				$("#edit_administrator").fadeTo(250,1);
+				$("#edit_administrator").animate({"position":"absolute","margin-top":"-310px"},500,function()
+				{
+					$("#messageBox").html("");
+					$("#edit_administrator").html("");
+					$("#add_administrator").show().animate({"position":"absolute","margin-top":"0px"},250);
+				});
+			}
+		});
+	}
+}
+
+
+// Page usage: courseinfo.php
+// To change the course info text
 function changeCourseInfo()
 {
 	if(stuffWorking == 0)
@@ -90,6 +190,9 @@ function changeCourseInfo()
 	}
 }
 
+
+// Page usage: courseinfo.php
+// To revert back to a previous version of the course info
 function courseInfoRevert(versionid)
 {
 	
@@ -115,6 +218,9 @@ function courseInfoRevert(versionid)
 	}
 }
 
+
+// Page usage: Global
+// To resize the search bar to fit perfectly on any screen
 function resizeSearch()
 {
 	var searchLeft = $("#search").offset().left;

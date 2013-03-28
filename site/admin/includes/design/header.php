@@ -20,7 +20,7 @@
             </a>
         </li>
         
-        <li class="icon" id="admins">
+        <li class="icon selected" id="admins">
             <a href="administrators"> 
                 <div class="icon"></div>
                 <span>Administrators</span>
@@ -31,8 +31,8 @@
             <a href="#4">
                 <div class="icon"></div>
                 <span>Search</span>
-                <input type="text" name="search" placeholder="Search">
             </a>
+            <input type="text" name="search" placeholder="Search">
         </li>
 
     </ul>
