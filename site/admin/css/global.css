@@ -5,8 +5,8 @@
 }
 
 body {
-	background: #eeedea; /* #f3f3f3 #e8e7e4*/
-	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	background: #e8e7e4; /* #f3f3f3 #e8e7e4 eeedea*/
+	font-family: "Open Sans", "Helvetica-Neu", Helvetica, Arial, sans-serif;
 	margin: 0;
 	padding: 0;
 	height: 100%;
@@ -122,7 +122,7 @@ a:link, a:active, a:visited {
 	content: "I can remember my password!";
 }
 
-input {
+input, select {
 	background: #ffffff;
 	box-sizing: border-box;
 	border: 2px solid rgba(255, 255, 255, 0);
@@ -134,6 +134,9 @@ input {
 	outline: none;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
+}
+select {
+	border: 2px solid #FFF; /* Turns out browsers dont like transparent colours with select boxes */
 }
 
 input::-webkit-input-placeholder {
@@ -154,7 +157,7 @@ input.error {
 /* Toolbar and buttons */
 /* Nav would be alot cleaner and wouldnt need a bunch of classes to work if there wasnt a silly float:right glitch with the input */
 nav {
-	background: #232323;
+	background: #3f3f3f; /*#232323 #3f3f3f*/
 	display: block;
 	font-size: 1.2em;
 	position: fixed;
@@ -164,12 +167,16 @@ nav {
 }
 
 nav li {
-	background: #232323;
-	border-right: 1px solid #333333;
+	background: #3f3f3f;
+/* 	//border-right: 1px solid #333333; */
 	float: left;
 	width: auto;
 	height: 60px;
 	position: relative;
+}
+
+nav .selected {
+
 }
 
 nav .right {
@@ -179,8 +186,10 @@ nav .right {
 }
 
 nav .right li {
-	border-left: 1px solid #333333;
-	border-right: 0px solid transparent;
+/*
+	//border-left: 1px solid #333333;
+	//border-right: 0px solid transparent;
+*/
 }
 
 nav li input {
@@ -195,6 +204,7 @@ nav li input {
 	padding-left: 64px;
 	/* //margin-left: -64px; */
 	position: absolute;
+	z-index: 200px;
 }
 
 nav li:last-child { border-right: 0px solid transparent; }
@@ -251,6 +261,23 @@ nav li.input span {
 	width: 400px;
 }
 
+nav li.icon:hover span {
+	background: #3f3f3f;
+	display: block;
+	top: 100%;
+	position: absolute;
+	white-space: nowrap;
+}
+
+nav .right li.icon:hover span {
+	background: #3f3f3f;
+	display: block;
+	top: 100%;
+	right: 0;
+	position: absolute;
+	white-space: nowrap;
+}
+
 nav #home .icon { background: url("../images/icons/light/home.png"); }
 nav #search .icon { background: url("../images/icons/search.png"); }
 nav #students .icon { background: url("../images/icons/light/students.png"); }
@@ -261,26 +288,30 @@ nav #power .icon { background: url("../images/icons/light/power.png"); }
 /* Search */
 .search {
 	background: #ffffff;
-	box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.01);
-	border-left: 1px solid #232323;
-	border-right: 1px solid #232323;
-	border-bottom: 1px solid #232323;
+	box-shadow: 0px 5px 1px rgba(0, 0, 0, 0.04);
+	border-left: 1px solid #3f3f3f;
+	border-right: 1px solid #3f3f3f;
+	border-bottom: 1px solid #3f3f3f;
 	display: block;
 	top: 58px;
 	height: auto;
 	max-height: 80%;
-	position: absolute;
+	position: fixed;
 	overflow-y: scroll;
 	z-index: 100;
 }
 
 .search li {
 	font-size: 18px;
-	line-height: 1.4;
+	line-height: 1.5;
 	width: 100%;
 	height: auto;
 	min-height: 60px;
 	overflow: hidden;
+}
+
+.search li:hover {
+	background: #8dedc9;
 }
 
 .search li .left {
@@ -300,6 +331,7 @@ nav #power .icon { background: url("../images/icons/light/power.png"); }
 	padding-top: 17px;
 	padding-right: 20px;
 	padding-bottom: 15px;
+	-webkit-transition: all 11s ease-in-out;
 }
 
 .search li .left {
@@ -320,52 +352,144 @@ nav #power .icon { background: url("../images/icons/light/power.png"); }
 	text-transform: lowercase;
 }
 
-.search #add {
-	border-top: 1px solid #232323;
-}
 .search #add .right {
 	padding-top: 7px;
 }
 
 .search #add .left { background: url("../images/icons/dark/add.png"); }
 .search #student .left { background: url("../images/icons/dark/students.png"); }
-.search #admin .left { background: url("../images/icons/dark/user.png"); }
+.search #admin .left { background: url("../images/icons/dark/user.png"); }	
 
-/* Options - Secondary Nav */
-.options {
-	background: #f7f7f7;
-	display: block;
-	width: 100%;
-	height: 45px;
-	position: absolute;
-	margin-top: 60px;
+li, h2, h3, h4, h5, .edit, .level, img {
+	//border: 1px solid red;
 }
 
 /* Page */
 .page {
-	color: black;
-	margin-top: 105px;
-	padding: 25px;
+	color: #232323;
+	margin-top: 60px;
+	padding-top: 20px;
 	position: absolute;
 }
- 
+
+.page input,.page select {
+	width: 100%;
+	position: relative;
+}
+
+.page .button {
+	background: #3f3f3f;
+	border-radius: 2px;
+	border: none;
+	color: #8dedc9;
+	display: inline-block;
+	font-weight: 1em;
+	padding: 15px 25px 15px 25px;	
+	text-transform: uppercase;
+}
+
+.page .button:active {
+	box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.8) inset;
+}
+
+
+.page ul {
+	overflow: hidden;
+}
+
+.page li {
+	background: #f7f7f7;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+	width: 100%;
+	padding: 12px 18px 12px 18px;
+	overflow: hidden;
+}
+.page li h4 {
+	font-size: 18px;
+	font-weight: bold;
+	margin-left: 80px;
+	margin-top: 7px;
+}
+
+.page li h5 {
+	color: rgba(0, 0, 0, 0.3);
+	display: inline-block;
+	font-size: 18px;
+	margin-left: 20px;
+	margin-top: 10px;
+}
+
+.page li img {
+	display: block;
+	float: left;
+	width: 60px;
+	height: 60px;
+}
+
+.page li .edit {
+	opacity: 0;
+	right: 18px;
+	margin-top: -18px;
+	position: absolute;
+}
+
+.page li:hover .edit {
+	opacity: 1;
+}
+
+.page li .level {
+	border: 1px solid #b8b8b8; 
+	color: #b8b8b8;
+	display: block;
+	right: 18px;
+	padding: 5px 8px 5px 8px;
+	position: absolute;
+	margin-top: -35px;
+	text-align: center;
+}
+
+.page li .level-1 { border: 1px solid #e76e66; color: #e76e66; }
+.page li .level-2 { border: 1px solid #9cc869; color: #9cc869; }
+.page li .level-3 { border: 1px solid #b8b8b8; color: #b8b8b8; }
+
+.page li .level-1:before { content: "Admin"; }
+.page li .level-2:before { content: "Moderator"; }
+.page li .level-3:before { content: "Average Joe";}
+
+section {
+	margin-bottom: 20px;
+}
+
+section.left-small {	
+	width: 30%;
+	float: left;
+}
+
+section.right-big {	
+	width: 68%;
+	float: right;
+}
+
 /* Portrait and Landscape */
 @media only screen and (max-width: 712px) {
-	body {
-		overflow: hidden;
-	}
-	
 	nav {
-		box-shadow: 0px 5px 0px rgba(0, 0, 0, 0.1);
+		box-shadow: 0px 5px 1px rgba(0, 0, 0, 0.04);
+		display: none;
 		width: 100%;
 		height: auto;
-		position: relative;
+		position: absolute;
 	}
 	
 	nav li {
 		border: none;
 		width: 100%;
 		float: none;
+	}
+	
+	nav li span {
+		width: 60% !important;
+		top: auto !important;
+		position: relative !important;
 	}
 	
 	nav .right {
@@ -383,13 +507,18 @@ nav #power .icon { background: url("../images/icons/light/power.png"); }
 	nav li.input input {
 		display: none;
 	}
+	
+	.search {
+		display: none !important;
+	}
+	
+	section.left-small, section.right-big {
+		clear: both;
+		width: 100%;
+	}
 }
 
 @media only screen and (max-width: 1000px) {
-	body {
-		overflow: hidden;
-	}
-	
 	.center {
 		width: 100%;
 		margin-left: 0;
@@ -399,7 +528,7 @@ nav #power .icon { background: url("../images/icons/light/power.png"); }
 
 @media only screen and (max-width: 480px) {
 	body {
-		overflow: hidden;
+		overflow-y: hidden;
 	} 
 }
 
